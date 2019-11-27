@@ -1,0 +1,13 @@
+import pandas as pd
+wbb1={'Student':['Ice Bear','Panda','Grizzly'],'Math':[80,95,79]}
+wbb2={'Student':['Ice Bear','Panda','Grizzly'],'Electronics':[85,81,83]}
+wbb3={'Student':['Ice Bear','Panda','Grizzly'],'GEAS':[90,79,93]}
+wbb4={'Student':['Ice Bear','Panda','Grizzly'],'ESAT':[93,89,88]}
+wbbs1=pd.DataFrame(wbb1,columns=['Student','Math'])
+wbbs2=pd.DataFrame(wbb2,columns=['Student','Electronics'])
+wbbs3=pd.DataFrame(wbb3,columns=['Student','GEAS'])
+wbbs4=pd.DataFrame(wbb4,columns=['Student','ESAT'])
+merge1=pd.merge(wbbs1,wbbs2,how='left',on='Student')
+merge2=pd.merge(wbbs3,wbbs4,how='left',on='Student')
+merged=pd.merge(merge1,merge2,how='left',on='Student')
+print(merged)
